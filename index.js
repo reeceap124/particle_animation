@@ -5,39 +5,6 @@ canvas.width = parent.offsetWidth
 canvas.height = parent.offsetHeight
 
 let particlesArray
-// Grid divided by .5 minDistance (any two particles in same, top, bot, left right automatically get connected. check distances for corners)
-// a: [{x,y},{x,y}],b: [{x,y}],c: [{x,y},{x,y},{x,y}]
-//
-
-class Grid {
-    constructor(width, height, cellSize) {
-        this.cellSize = cellSize
-        this.numCol = Math.ceil(width / cellSize)
-        this.numRow = Math.ceil(height/cellSize)
-
-        this.cells = []
-
-        for (let x = 0; x < this.numCol; x++){
-            this.cells[x] = []
-            for (let y = 0; y < this.numRow; y++) {
-                this.cells[x][y] = []
-            }
-        }
-    }
-    add(particle) {
-        let col = Math.floor( particle.x / this.cellSize);
-        let row = Math.floor( particle.y / this.cellSize);
-      
-        this.cells[col][row].push(particle)
-        particle.gridCell = {col, row}
-    }
-    removeParticle(particle) {
-        let {col, row} = particle.gridCell
-        let cell = this.cells[col][row];
-        let index = cell.indexOf(particle)
-        cell.splice(index, 1)
-      }
-}
 
 class Particle {
     constructor(x, y, directionX, directionY, size, color) {
