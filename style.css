@@ -60,20 +60,21 @@
     gap: 24px;
     height: 60%;
     width: 60%;
-    border-radius: 4px;
+    border-radius: 10px;
     backdrop-filter: blur(5px);
     background: rgb(0,0,0,.4);
+    padding: 2em;
 }
 h1 {
-    font-size: 72px;
+    font-size: 3em;
 }
 h2 {
-    font-size: 48px;
+    font-size: 2em;
 }
 
 p {
-    max-width: 800px;
-    
+  max-width: 800px;
+  font-size: 1em;
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   font-style: normal;
